@@ -1,0 +1,35 @@
+$porcentaje: 100%;
+$fondo: url('/assets/images/background.jpg');
+
+#cover {
+	background: $fondo center center no-repeat;
+	background-size: cover;
+	height: $porcentaje;
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+#cover-caption {
+	width: $porcentaje;
+	position: relative;
+	z-index: 1;
+}
+
+form:before {
+	content: '';
+	height: $porcentaje;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	background-color: rgba(0,0,0,0.3);
+	z-index: -1;
+	border-radius: 10px;
+}
+
+.img-poster{
+	width: 250px;
+	height: 250px;
+	object-fit: contain;
+}

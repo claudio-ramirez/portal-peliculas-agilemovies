@@ -1,0 +1,39 @@
+<div class="row align-items-center">
+	<div class="col-12 text-left">
+		<h1 class="display-4">{{ (state$ | async).data.title }}</h1>
+	</div>
+</div>
+
+<div class="text-center">
+	<img src="{{ (state$ | async).imageBaseUrl + (state$ | async).data.backdrop_path }}" class="img-fluid img-thumbnail" alt="...">
+</div>
+
+<hr>
+
+<div class="media">
+	<img src="{{ (state$ | async).imageBaseUrl + (state$ | async).data.poster_path }}" class="align-self-start mr-3 img-poster" alt="...">
+	<div class="media-body">
+		<dl class="row">
+			<dt class="col-sm-3">Título Original</dt>
+			<dd class="col-sm-9">{{ (state$ | async).data.original_title }}</dd>
+
+			<dt class="col-sm-3">Título</dt>
+			<dd class="col-sm-9">{{ (state$ | async).data.title }}</dd>
+
+			<dt class="col-sm-3">Lanzamiento</dt>
+			<dd class="col-sm-9">{{ (state$ | async).data.release_date | date: "dd/MM/yyyy" }}</dd>
+
+			<dt class="col-sm-3">Reseña</dt>
+			<dd class="col-sm-9">{{ (state$ | async).data.overview }}</dd>
+
+			<dt class="col-sm-3">Todo Público</dt>
+			<dd class="col-sm-9">{{ (state$ | async).data.adult ? "NO" : "SI" }}</dd>
+		</dl>
+	</div>
+</div>
+
+<hr>
+
+<carousel [lightDOM]="true" [arrowsTheme]="'dark'" [overflowCellsLimit]="3" (events)="handleCarouselEvents($event)" [images]="imagesActorsPerMovies"></carousel>
+
+<br>

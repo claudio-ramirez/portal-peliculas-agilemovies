@@ -1,0 +1,10 @@
+{
+	"printWidth": 200,
+	"useTabs": true,
+	"semi": true,
+	"bracketSpacing": true,
+	"proseWrap": "preserve",
+	"arrowParens": "always",
+	"display": "block",
+	"htmlWhitespaceSensitivity": "ignore"
+}

@@ -1,0 +1,5 @@
+$important: unquote("!important");
+
+.container {
+	max-width: 85% $important;
+}

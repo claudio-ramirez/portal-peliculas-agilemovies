@@ -1,0 +1,24 @@
+<div class="container">
+	<br />
+
+	<div class="text-center">
+		<img src="{{ pathImage }}" alt="404" />
+	</div>
+
+	<h1 class="display-2 text-center">{{ title }}</h1>
+	<h1 class="text-center">{{ subtitle }}</h1>
+
+	<br />
+
+	<div class="text-right">
+		<div *ngIf="activeSession; else elseActiveSession">
+			<a [routerLink]="['/private/dashboard']"><strong>Volver al Inicio</strong></a>
+		</div>
+
+		<ng-template #elseActiveSession>
+			<div>
+				<a [routerLink]="['/start']"><strong>Volver al Inicio de Sesión</strong></a>
+			</div>
+		</ng-template>
+	</div>
+</div>
